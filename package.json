@@ -1,0 +1,30 @@
+{
+  "name": "hectaremaps-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "env-var": "^7.0.1",
+    "eslint": "^8.0.0",
+    "jest": "^27.2.5",
+    "jest-chain": "^1.1.5",
+    "jest-environment-node": "^27.2.5",
+    "jest-extended": "^0.11.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "API",
+    "Maps",
+    "Node",
+    "BackEnd"
+  ],
+  "author": "CarlosNeto2804, terenciani",
+  "license": "ISC"
+}
