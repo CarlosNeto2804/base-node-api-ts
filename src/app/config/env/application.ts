@@ -1,9 +1,9 @@
-const env = require('env-var');
-const { isRequired } = require('../../utils/is-required');
+import env from 'env-var';
+import { isRequired } from '@/app/utils/is-required';
 
 const IS_REQUIRED = isRequired();
 
-module.exports = Object.freeze({
+export const applicationEnv = Object.freeze({
   server: {
     nodeEnv: env.get('NODE_ENV').required(IS_REQUIRED).asString(),
     port: env.get('API_PORT').required(IS_REQUIRED).asPortNumber(),
@@ -22,6 +22,6 @@ module.exports = Object.freeze({
     allowedMethods: env
       .get('CORS_ALLOWED_METHODS')
       .required(IS_REQUIRED)
-      .asString(),
+      .asArray(),
   },
 });
