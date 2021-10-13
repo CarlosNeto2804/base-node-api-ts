@@ -1,7 +1,8 @@
 import path from 'path';
-import { Logger } from '@/contracts';
 import bunyan, { LogLevel } from 'bunyan';
+import { Logger } from '@/contracts';
 import { applicationEnv } from '@/app/config';
+import { generateRandomFilename } from '@/shared';
 
 const level = applicationEnv.logger.logLevel as unknown as LogLevel;
 
@@ -16,7 +17,14 @@ export function getLogger(name = ''): Logger {
       },
       {
         level,
-        path: path.resolve(__dirname, '..', '..', '..', 'logs', 'logs.json'),
+        path: path.resolve(
+          __dirname,
+          '..',
+          '..',
+          '..',
+          'logs',
+          generateRandomFilename('json')
+        ),
       },
     ],
     src: true,
