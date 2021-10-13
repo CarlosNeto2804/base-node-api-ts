@@ -10,7 +10,9 @@ function register(app: Application) {
   app.use(validateOrigin(applicationEnv.cors.allowedOrigin));
   app.use(validateMethod(applicationEnv.cors.allowedMethods));
   app.use(json({ limit: applicationEnv.server.requestBodySize }));
-  app.use(urlencoded({ limit: applicationEnv.server.requestBodySize }));
+  app.use(
+    urlencoded({ limit: applicationEnv.server.requestBodySize, extended: true })
+  );
   app.use(morgan(applicationEnv.logger.morganFormat));
 }
 
