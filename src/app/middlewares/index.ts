@@ -1,9 +1,9 @@
 import morgan from 'morgan';
 import helmet from 'helmet';
 import { applicationEnv } from '../config';
-import { Application, json, urlencoded } from 'express';
-import { validateMethod } from './validate-request-method';
 import { validateOrigin } from './validate-cors';
+import { validateMethod } from './validate-request-method';
+import { Application, json, urlencoded } from 'express';
 
 function register(app: Application) {
   app.use(helmet());

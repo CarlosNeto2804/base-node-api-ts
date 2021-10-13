@@ -1,6 +1,6 @@
 import { StatusCode } from '../status-code';
 
-export type CustomError = {
+export type ApplicationError = {
   statusCode: StatusCode;
   code: string;
   message: string;
